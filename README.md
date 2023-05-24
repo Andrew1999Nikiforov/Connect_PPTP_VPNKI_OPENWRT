@@ -1,5 +1,4 @@
-# Connect_PPTP_VPNKI_OPENWRT
+# Инструкция по настройке PPTP соединения между сервисом VPNKI и роутером Xiaomi mi Router 4C на OS OpenWRT OpenWrt 22.03.4 r20123-38ccc47687
 
-## Instructions for setting up a connection between the VPNKI service in the OS OpenWRT router
-
-1. Проверить наличие пакета ppp-mod-pptp и kmod-nf-nathelper-extra и в случае его отсутствия установить из репозитория.
+1. Проверить наличие пакета ppp-mod-pptp и kmod-nf-nathelper-extra и в случае их отсутствия установить из репозитория.
+2. 
