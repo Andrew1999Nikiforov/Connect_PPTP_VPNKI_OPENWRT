@@ -10,26 +10,22 @@
 8. В поле VPN Server вводим "msk.vpnki.ru" или то, что будет указано в поле "Cервер для подключения" на сайте VPNKI в меню "Настройка туннелей".
 9. В поле username и password вводим выданный нам логин и наш пароль.
 10. Переходим на вкладку "Advanced Settings". Ставим "Obtain IPv6 address" на "Disabled" и убираем галочку с поля "Use default gateway" и нажимаем сохранить.
-11. Подключаемся по SSH к маршрутизатору В файле /etc/ppp/options.pptp необходимо отключить строку: mppe required,no40,no56,stateless. Комментируем её и всё)
+11. Подключаемся по SSH к маршрутизатору и в файле /etc/ppp/options.pptp необходимо закомментировать строку: mppe required,no40,no56,stateless. Комментируем её и всё)
 Если файл отличается в других строках, то ничего страшного.
 
-`
+```
 noipdefault
-
 noauth
-
 nobsdcomp
-
 nodeflate
-
 idle 0
-
 #mppe required,no40,no56,stateless
-
 nomppe
-
 maxfail 0
-
 #refuse-eap
+```
+### После этих пунктов перезагружаем интерфейс, который мы создали и если он всё же не заработал, то создаем файл /etc/sysctl.d/local.conf и прописываем туда строку после чего перезагружаем роутер.
+`
+net.netfilter.nf_conntrack_helper = 1
 `
  
